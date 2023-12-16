@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://doktwhf07affl"]
+
+[ext_resource type="Texture2D" uid="uid://clwwgkdn137ep" path="res://assets/Gradient.png" id="1_6a2ur"]
+[ext_resource type="Texture2D" uid="uid://c11xeux8tt8xa" path="res://assets/Rectangle.png" id="2_24sx1"]
+[ext_resource type="Texture2D" uid="uid://bsv0bmr4kvj6n" path="res://assets/Gradient2.png" id="2_py133"]
+[ext_resource type="Texture2D" uid="uid://d0u05cwbb1etj" path="res://assets/Rectangle2.png" id="4_1qfec"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+alignment = 1
+
+[node name="JumpTouch" type="TouchScreenButton" parent="HBoxContainer3"]
+position = Vector2(-500, -218)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_6a2ur")
+texture_pressed = ExtResource("2_py133")
+action = "jump"
+
+[node name="SlamTouch" type="TouchScreenButton" parent="HBoxContainer3"]
+position = Vector2(-500, -30)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_24sx1")
+texture_pressed = ExtResource("4_1qfec")
+passby_press = true
+action = "slam"
+
+[node name="AttackTouch" type="TouchScreenButton" parent="HBoxContainer3"]
+position = Vector2(-300, -218)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_6a2ur")
+texture_pressed = ExtResource("2_py133")
+action = "attack"
+
+[node name="SpecialTouch" type="TouchScreenButton" parent="HBoxContainer3"]
+position = Vector2(-300, -30)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_24sx1")
+texture_pressed = ExtResource("4_1qfec")
+passby_press = true
+action = "special"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="LeftTouch" type="TouchScreenButton" parent="HBoxContainer2"]
+position = Vector2(120, -218)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_6a2ur")
+texture_pressed = ExtResource("2_py133")
+passby_press = true
+action = "left"
+
+[node name="SlideLeftTouch" type="TouchScreenButton" parent="HBoxContainer2"]
+position = Vector2(120, -30)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_24sx1")
+texture_pressed = ExtResource("4_1qfec")
+passby_press = true
+action = "slide"
+
+[node name="RightTouch" type="TouchScreenButton" parent="HBoxContainer2"]
+position = Vector2(320, -218)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_6a2ur")
+texture_pressed = ExtResource("2_py133")
+passby_press = true
+action = "right"
+
+[node name="SlideRightTouch" type="TouchScreenButton" parent="HBoxContainer2"]
+position = Vector2(320, -30)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_24sx1")
+texture_pressed = ExtResource("4_1qfec")
+passby_press = true
+action = "slide"

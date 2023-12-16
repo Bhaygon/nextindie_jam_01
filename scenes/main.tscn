@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5eiu33650igb"]
+
+[ext_resource type="PackedScene" uid="uid://doktwhf07affl" path="res://scenes/hud.tscn" id="1_22bli"]
+[ext_resource type="PackedScene" uid="uid://bwinh05r0gl3q" path="res://levels/base/level_base.tscn" id="1_ofd34"]
+[ext_resource type="PackedScene" uid="uid://b4euajxnj6q8s" path="res://scenes/player.tscn" id="2_gjpi6"]
+
+[node name="Main" type="Node"]
+
+[node name="HUD" parent="." instance=ExtResource("1_22bli")]
+
+[node name="LevelBase" parent="." instance=ExtResource("1_ofd34")]
+
+[node name="Player" parent="." instance=ExtResource("2_gjpi6")]
