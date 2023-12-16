@@ -53,3 +53,4 @@ layer_0/tile_data = PackedInt32Array(1703936, 0, 1, 1703937, 0, 1, 1703938, 0, 1
 
 [node name="Player" parent="." instance=ExtResource("2_vqieq")]
 position = Vector2(138, 492)
+move_spd = 200.0
