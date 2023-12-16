@@ -67,3 +67,12 @@ special={
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="items"
+
+[physics]
+
+common/physics_ticks_per_second=120
+2d/default_gravity=0.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
