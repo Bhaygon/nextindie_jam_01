@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0u05cwbb1etj"
-path="res://.godot/imported/Rectangle2.png-c3cfda6d9c48b15132b34370bb260dee.ctex"
+uid="uid://bq16554pv3bou"
+path="res://.godot/imported/door.png-b71998044d513d047c9b0091ee4a07ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Rectangle2.png"
-dest_files=["res://.godot/imported/Rectangle2.png-c3cfda6d9c48b15132b34370bb260dee.ctex"]
+source_file="res://assets/door.png"
+dest_files=["res://.godot/imported/door.png-b71998044d513d047c9b0091ee4a07ff.ctex"]
 
 [params]
 

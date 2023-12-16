@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://takv2hu73yk3"
-path="res://.godot/imported/DarkSamurai (64x64).png-2765b72cb6434d7c5d598aa16c0ddff1.ctex"
+uid="uid://4gxtwd4pipyw"
+path="res://.godot/imported/gift.png-412c7e0fdb62fef240e384fb21a35bda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/DarkSamurai (64x64).png"
-dest_files=["res://.godot/imported/DarkSamurai (64x64).png-2765b72cb6434d7c5d598aa16c0ddff1.ctex"]
+source_file="res://assets/gift.png"
+dest_files=["res://.godot/imported/gift.png-412c7e0fdb62fef240e384fb21a35bda.ctex"]
 
 [params]
 
