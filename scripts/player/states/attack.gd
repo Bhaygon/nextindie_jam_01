@@ -12,11 +12,11 @@ signal label_debug_text
 @export var idle_state: State
 
 func enter() -> void:
-    parent.velocity.x = 0
-    parent.velocity.y = 0
-    label_debug_text.emit("attack")
-    super()
+	parent.velocity.x = 0
+	parent.velocity.y = 0
+	label_debug_text.emit("attack")
+	super()
 
 func process_physics(delta: float) -> State:
-    parent.move_and_slide()
-    return idle_state
+	parent.move_and_slide()
+	return idle_state
