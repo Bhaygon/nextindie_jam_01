@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0crgdi85qfde"]
+
+[sub_resource type="GDScript" id="GDScript_tn7s8"]
+script/source = "extends Node
+
+# Singleton that handles player score, and the chaos timer.
+
+
+# Variables =======================================================================================
+var anodeRemainingMcGuffins: Array = []
+
+var bChaoTimerEnabled: bool = false
+
+var fChaosTimer: float = 0.000
+
+
+
+# General =========================================================================================
+
+func _process(fDelta) -> void:
+	if bChaoTimerEnabled: Add_Time_To_Chaos_Timer(fDelta)
+
+
+
+# Timer ===========================================================================================
+
+# Adds delta time from process function to fChaosTimer if bChaosTimerEnabled, (see _process)
+func Add_Time_To_Chaos_Timer(fDelta) -> void:
+	fChaosTimer += fDelta
+
+
+func Reset_Timer() -> void:
+	bChaoTimerEnabled = false
+	fChaosTimer = 0.000
+
+
+func Start_Timer() -> void:
+	bChaoTimerEnabled = true
+
+
+
+# McGuffins =======================================================================================
+
+func McGuffin_Destroyed(nodeMcGuffin) -> void:
+	# START TIMER IF THIS IS THE FIRST ONE
+	if ! bChaoTimerEnabled: bChaoTimerEnabled = true
+	
+	anodeRemainingMcGuffins.erase(nodeMcGuffin)
+	# CHECK IF ARRAY IS EMPTY IF SO DISPLAY WIN SCREEN
+	if anodeRemainingMcGuffins.is_empty():
+		pass
+"
+
+[node name="globalScore" type="Node"]
+script = SubResource("GDScript_tn7s8")
