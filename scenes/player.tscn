@@ -329,6 +329,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("13_mfumy")
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 16)
+target_position = Vector2(0, 5)
+
 [connection signal="label_debug_text" from="StateMachine/Attack" to="StateLabel" method="change_label"]
 [connection signal="label_debug_text" from="StateMachine/Special" to="StateLabel" method="change_label"]
 [connection signal="label_debug_text" from="StateMachine/Slide" to="StateLabel" method="change_label"]
