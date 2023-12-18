@@ -13,12 +13,19 @@ var bChaoTimerEnabled: bool = false
 
 var fChaosTimer: float = 0.000
 
+var nTotalMcGuffins: int = 0
+
 
 
 # General =========================================================================================
 
 func _process(fDelta) -> void:
 	if bChaoTimerEnabled: Add_Time_To_Chaos_Timer(fDelta)
+	
+	# TEST DESTROY MCGUFFINS // DELETE ME BEFORE FINAL VERSION
+	if Input.is_action_just_pressed(\"testdestroymcguffin\") && ! anodeRemainingMcGuffins.is_empty(): 
+		anodeRemainingMcGuffins[anodeRemainingMcGuffins.size() - 1].Destroy()
+	# DELETE ME
 
 
 
@@ -47,7 +54,7 @@ func McGuffin_Destroyed(nodeMcGuffin) -> void:
 	
 	anodeRemainingMcGuffins.erase(nodeMcGuffin)
 	# CHECK IF ARRAY IS EMPTY IF SO DISPLAY WIN SCREEN
-	if anodeRemainingMcGuffins.is_empty():
+	if anodeRemainingMcGuffins.is_empty() && nTotalMcGuffins != 0:
 		pass
 "
 

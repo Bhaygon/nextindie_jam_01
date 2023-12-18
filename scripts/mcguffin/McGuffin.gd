@@ -12,6 +12,7 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	globalScore.anodeRemainingMcGuffins.append(self)
+	globalScore.nTotalMcGuffins += 1
 	nodeAnimationPlayer.play("Bobbing")
 
 
