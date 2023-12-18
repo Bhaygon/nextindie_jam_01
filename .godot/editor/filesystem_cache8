@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702760032
+::res://::1702856156
+export_presets.cfg::TextFile::-1::1702808446::0::1::::<><>::
 icon.svg::CompressedTexture2D::2912458500451981851::1702750012::1702759012::1::::<><>::
 ::res://assets/::1702759897
 DarkSamurai (64x64).png::CompressedTexture2D::1334234130618967408::1702759012::1702759012::1::::<><>::
@@ -11,22 +12,25 @@ Rectangle.png::CompressedTexture2D::6652829845112896058::1702759012::1702759012:
 ::res://levels/::1702759897
 ::res://levels/base/::1702759897
 level_base.tscn::PackedScene::3947893447459536212::1702759012::0::1::::<><>::uid://bhkpyq6dyx000::::res://assets/monochrome_tilemap_transparent_packed.png
-::res://scenes/::1702759997
+::res://scenes/::1702856129
 hud.tscn::PackedScene::8163742926446952233::1702759997::0::1::::<><>::uid://clwwgkdn137ep::::res://assets/Gradient.png<>uid://c11xeux8tt8xa::::res://assets/Rectangle.png<>uid://bsv0bmr4kvj6n::::res://assets/Gradient2.png<>uid://d0u05cwbb1etj::::res://assets/Rectangle2.png
-main.tscn::PackedScene::6887287154721550325::1702759927::0::1::::<><>::uid://doktwhf07affl::::res://scenes/hud.tscn<>uid://bwinh05r0gl3q::::res://levels/base/level_base.tscn<>uid://b4euajxnj6q8s::::res://scenes/player.tscn
-player.tscn::PackedScene::4431369508912187036::1702759993::0::1::::<><>::uid://takv2hu73yk3::::res://assets/DarkSamurai (64x64).png<>res://scripts/player/player.gd<>res://scripts/player/state_machine.gd<>res://scripts/player/states/state.gd<>res://scripts/player/states/idle.gd<>res://scripts/player/states/run.gd<>res://scripts/player/states/jump.gd<>res://scripts/player/states/fall.gd<>res://scripts/player/states/attack.gd<>res://scripts/player/states/special.gd<>res://scripts/player/states/slide.gd<>res://scripts/player/states/slam.gd<>res://scenes/state_label.gd
-state_label.gd::GDScript::-1::1702759012::0::1::::<>Label<>::
-::res://scripts/::1702759897
+main.tscn::PackedScene::6887287154721550325::1702856129::0::1::::<><>::uid://doktwhf07affl::::res://scenes/hud.tscn<>uid://r4x7t5u6382f::::res://scenes/main_menu.tscn<>uid://bwinh05r0gl3q::::res://levels/base/level_base.tscn<>uid://b4euajxnj6q8s::::res://scenes/player.tscn
+main_menu.tscn::PackedScene::1254531978191929071::1702856129::0::1::::<><>::res://scripts/mainmenu/MainMenu.gd
+player.tscn::PackedScene::4431369508912187036::1702761210::0::1::::<><>::uid://takv2hu73yk3::::res://assets/DarkSamurai (64x64).png<>res://scripts/player/player.gd<>res://scripts/player/state_machine.gd<>res://scripts/player/states/state.gd<>res://scripts/player/states/idle.gd<>res://scripts/player/states/run.gd<>res://scripts/player/states/jump.gd<>res://scripts/player/states/fall.gd<>res://scripts/player/states/attack.gd<>res://scripts/player/states/special.gd<>res://scripts/player/states/slide.gd<>res://scripts/player/states/slam.gd<>res://scenes/state_label.gd
+state_label.gd::GDScript::-1::1702856129::0::1::::<>Label<>::
+::res://scripts/::1702856129
+::res://scripts/mainmenu/::1702856129
+MainMenu.gd::GDScript::-1::1702856129::0::1::::<>CanvasLayer<>::
 ::res://scripts/player/::1702759897
 player.gd::GDScript::-1::1702759012::0::1::::Player<>CharacterBody2D<>::
 state_machine.gd::GDScript::-1::1702759012::0::1::::<>Node<>::
-::res://scripts/player/states/::1702759976
-attack.gd::GDScript::-1::1702759012::0::1::::<>State<>::
+::res://scripts/player/states/::1702856129
+attack.gd::GDScript::-1::1702856129::0::1::::<>State<>::
 fall.gd::GDScript::-1::1702759012::0::1::::<>State<>::
-idle.gd::GDScript::-1::1702759012::0::1::::<>State<>::
+idle.gd::GDScript::-1::1702856129::0::1::::<>State<>::
 jump.gd::GDScript::-1::1702759012::0::1::::<>State<>::
 run.gd::GDScript::-1::1702759012::0::1::::<>State<>::
-slam.gd::GDScript::-1::1702759976::0::1::::<>State<>::
+slam.gd::GDScript::-1::1702856129::0::1::::<>State<>::
 slide.gd::GDScript::-1::1702759971::0::1::::<>State<>::
 special.gd::GDScript::-1::1702759012::0::1::::<>State<>::
 state.gd::GDScript::-1::1702759012::0::1::::State<>Node<>::

@@ -31,6 +31,7 @@ func increase_speed():
 
 func land():
 	landing = true
+	#! RAYCAST CONDITION GO HERE
 	parent.animation_player.play("slam_end")
 	await parent.animation_player.animation_finished
 	landed = true

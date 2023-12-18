@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var coyote_timer = $CoyoteTimer
 @onready var jump_buffer_timer = $JumpBufferTimer
 @onready var sprite = $Sprite2D
+@onready var raycast_on_feet = $RayCast2D
 
 func _ready() -> void:
 	state_machine.init(self)

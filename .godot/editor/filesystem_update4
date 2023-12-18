@@ -1,2 +1,3 @@
-res://scenes/main.tscn
-res://scenes/player.tscn
+res://scripts/player/states/slam.gd
+res://scripts/player/player.gd
+res://scripts/player/states/fall.gd
