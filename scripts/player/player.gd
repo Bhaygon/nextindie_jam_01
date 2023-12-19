@@ -11,6 +11,11 @@ extends CharacterBody2D
 @onready var crouch_shape = $CrouchShape
 @onready var standing_shape = $StandingShape
 
+# Raycasts
+@onready var crouch_raycast1 = $CrouchRaycast1
+@onready var crouch_raycast2 = $CrouchRaycast2
+@onready var crouch_raycast3 = $CrouchRaycast3
+
 func _ready() -> void:
 	state_machine.init(self)
 

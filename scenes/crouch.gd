@@ -18,13 +18,19 @@ func enter() -> void:
     parent.standing_shape.disabled = true
     super()
 
-func leave_crouch(new_state: State): #todo Switch hitboxes
+func leave_crouch(new_state: State):
     parent.crouch_shape.disabled = true
     parent.standing_shape.disabled = false
     label_debug_text.emit("leave crouch")
     return new_state
 
-func can_leave_crouch() -> bool: #todo verify space for hitboxes
+func can_leave_crouch() -> bool:
+    if parent.crouch_raycast1.is_colliding():
+        return false
+    if parent.crouch_raycast2.is_colliding():
+        return false
+    if parent.crouch_raycast3.is_colliding():
+        return false
     return true
 
 func process_physics(delta: float) -> State:
@@ -39,11 +45,12 @@ func process_physics(delta: float) -> State:
         parent.sprite.flip_h = true
     # Animation
     if not right and not left:
+        parent.velocity.x = 0
         parent.animation_player.stop()
     else:
         parent.animation_player.play()
     # Leave crouch
-    if Input.is_action_just_pressed("crouch") and (not right and not left) and can_leave_crouch():
+    if Input.is_action_just_pressed("crouch") and can_leave_crouch():
         return leave_crouch(idle_state)
     # Jump
     if Input.is_action_just_pressed("jump"):
