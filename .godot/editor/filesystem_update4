@@ -1,14 +1,5 @@
-res://scripts/player/states/slam.gd
-res://scripts/player/player.gd
-res://scripts/player/state_machine.gd
-res://scripts/player/states/state.gd
-res://scripts/player/states/special.gd
-res://scripts/player/states/slide.gd
-res://scripts/player/states/fall.gd
-res://scripts/player/states/attack.gd
-res://scripts/player/states/idle.gd
-res://scripts/player/states/jump.gd
-res://scripts/player/states/run.gd
 res://scenes/crouch.gd
-res://scenes/player.tscn
 res://scenes/main.tscn
+res://scenes/player.tscn
+res://scripts/player/player.gd
+res://scenes/state_label.gd

@@ -15,6 +15,7 @@ signal label_debug_text
 
 @export var idle_state: State
 @export var jump_state: State
+@export var crouch_state: State
 
 var tw: Tween
 
@@ -32,6 +33,10 @@ func increase_speed():
 	tw.tween_property(self, "speed", 0, 0.5)
 
 func process_physics(delta: float) -> State:
+	#todo Crouch
+	if Input.is_action_just_pressed("crouch") and abs(parent.velocity.x) < run_speed * 2: # Cannot crouch if too fast
+		tw.stop()
+		return crouch_state
 	# Move
 	if dir_right: 
 		parent.velocity.x = speed

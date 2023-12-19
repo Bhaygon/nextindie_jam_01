@@ -230,6 +230,7 @@ shape = SubResource("RectangleShape2D_plyu4")
 [node name="CrouchShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_ntrya")
+disabled = true
 debug_color = Color(0.901961, 0, 0.764706, 0.419608)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -244,16 +245,17 @@ starting_state = NodePath("Idle")
 script = ExtResource("4_expbu")
 animation_name = "idle"
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "run_state", "attack_state", "special_state")]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "run_state", "attack_state", "special_state", "crouch_state")]
 script = ExtResource("5_x3xf4")
 fall_state = NodePath("../Fall")
 jump_state = NodePath("../Jump")
 run_state = NodePath("../Run")
 attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
+crouch_state = NodePath("../Crouch")
 animation_name = "idle"
 
-[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "idle_state", "slide_state", "attack_state", "special_state")]
+[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "idle_state", "slide_state", "attack_state", "special_state", "crouch_state")]
 script = ExtResource("6_3w4xs")
 fall_state = NodePath("../Fall")
 jump_state = NodePath("../Jump")
@@ -261,6 +263,7 @@ idle_state = NodePath("../Idle")
 slide_state = NodePath("../Slide")
 attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
+crouch_state = NodePath("../Crouch")
 animation_name = "run"
 
 [node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "idle_state", "run_state", "slam_state", "attack_state", "special_state")]
@@ -286,12 +289,13 @@ special_state = NodePath("../Special")
 extra_gravity = 600
 animation_name = "fall"
 
-[node name="Crouch" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "slide_state", "jump_state")]
+[node name="Crouch" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "slide_state", "jump_state", "fall_state")]
 script = ExtResource("9_04wpj")
 idle_state = NodePath("../Idle")
 run_state = NodePath("../Run")
 slide_state = NodePath("../Slide")
 jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
 
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("9_iay5n")
@@ -303,10 +307,11 @@ script = ExtResource("10_r5pad")
 idle_state = NodePath("../Idle")
 animation_name = "special"
 
-[node name="Slide" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "jump_state")]
+[node name="Slide" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "jump_state", "crouch_state")]
 script = ExtResource("11_t5att")
 idle_state = NodePath("../Idle")
 jump_state = NodePath("../Jump")
+crouch_state = NodePath("../Crouch")
 animation_name = "slide"
 
 [node name="Slam" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
@@ -349,6 +354,7 @@ script = ExtResource("13_mfumy")
 position = Vector2(0, 16)
 target_position = Vector2(0, 5)
 
+[connection signal="label_debug_text" from="StateMachine/Crouch" to="StateLabel" method="change_label"]
 [connection signal="label_debug_text" from="StateMachine/Attack" to="StateLabel" method="change_label"]
 [connection signal="label_debug_text" from="StateMachine/Special" to="StateLabel" method="change_label"]
 [connection signal="label_debug_text" from="StateMachine/Slide" to="StateLabel" method="change_label"]

@@ -7,6 +7,7 @@ extends State
 @export var slide_state: State
 @export var attack_state: State
 @export var special_state: State
+@export var crouch_state: State
 
 func enter() -> void:
 	#print("run")
@@ -19,6 +20,9 @@ func process_physics(delta: float) -> State:
 	#todo Special
 	if Input.is_action_just_pressed("special"):
 		return special_state
+	#todo Crouch
+	if Input.is_action_just_pressed("crouch"):
+		return crouch_state
 	# Move
 	var right = Input.is_action_pressed("right")
 	var left = Input.is_action_pressed("left")

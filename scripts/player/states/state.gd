@@ -5,6 +5,7 @@ extends Node
 
 var run_speed: float = 200
 var gravity: int = 1600
+var deceleration: float = 400 #todo Value reduced on the speed each second if speed is higher than it should be
 
 ## Hold a reference to the parent so that it can be controlled by the state
 var parent: Player

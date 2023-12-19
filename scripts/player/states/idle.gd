@@ -6,6 +6,7 @@ extends State
 
 @export var attack_state: State
 @export var special_state: State
+@export var crouch_state: State
 
 func enter() -> void:
 	#print("idle")
@@ -13,6 +14,9 @@ func enter() -> void:
 	parent.velocity.x = 0
 
 func process_physics(delta: float) -> State:
+	#todo Crouch
+	if Input.is_action_just_pressed("crouch"):
+		return crouch_state
 	#todo Attack
 	if Input.is_action_just_pressed("attack"):
 		return attack_state
