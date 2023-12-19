@@ -350,16 +350,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("13_mfumy")
 
-[node name="DownRayCast1" type="RayCast2D" parent="."]
-position = Vector2(-3, 16)
-target_position = Vector2(0, 2)
-
-[node name="DownRayCast2" type="RayCast2D" parent="."]
+[node name="DownDistanceRaycast" type="RayCast2D" parent="."]
 position = Vector2(0, 16)
-target_position = Vector2(0, 2)
+target_position = Vector2(0, 100)
 
-[node name="DownRayCast3" type="RayCast2D" parent="."]
-position = Vector2(3, 16)
+[node name="DownRaycast" type="RayCast2D" parent="."]
+position = Vector2(0, 16)
 target_position = Vector2(0, 2)
 
 [node name="CrouchRaycast1" type="RayCast2D" parent="."]

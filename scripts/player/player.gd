@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var coyote_timer = $CoyoteTimer
 @onready var jump_buffer_timer = $JumpBufferTimer
 @onready var sprite = $Sprite2D
-@onready var raycast_on_feet = $RayCast2D
 @onready var crouch_shape = $CrouchShape
 @onready var standing_shape = $StandingShape
 
@@ -15,6 +14,8 @@ extends CharacterBody2D
 @onready var crouch_raycast1 = $CrouchRaycast1
 @onready var crouch_raycast2 = $CrouchRaycast2
 @onready var crouch_raycast3 = $CrouchRaycast3
+@onready var down_raycast = $DownRaycast
+@onready var down_distance_raycast = $DownDistanceRaycast
 
 func _ready() -> void:
 	state_machine.init(self)

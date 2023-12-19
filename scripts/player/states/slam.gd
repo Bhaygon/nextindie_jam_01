@@ -33,10 +33,14 @@ func increase_speed():
 
 func land():
 	landing = true
-	#! RAYCAST CONDITION GO HERE
+	slam()
 	parent.animation_player.play("slam_end")
 	await parent.animation_player.animation_finished
 	landed = true
+
+func slam():
+	if parent.down_raycast.is_colliding():
+		print("SLAM RAYCAST COLLISION")
 
 func process_physics(delta: float) -> State:
 	# Move
