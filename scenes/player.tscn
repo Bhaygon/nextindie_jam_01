@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4euajxnj6q8s"]
+[gd_scene load_steps=30 format=3 uid="uid://b4euajxnj6q8s"]
 
 [ext_resource type="Texture2D" uid="uid://takv2hu73yk3" path="res://assets/DarkSamurai (64x64).png" id="1_54bhe"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_cinr2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/player/states/run.gd" id="6_3w4xs"]
 [ext_resource type="Script" path="res://scripts/player/states/jump.gd" id="7_hdwc7"]
 [ext_resource type="Script" path="res://scripts/player/states/fall.gd" id="8_wsu6k"]
+[ext_resource type="Script" path="res://scenes/crouch.gd" id="9_04wpj"]
 [ext_resource type="Script" path="res://scripts/player/states/attack.gd" id="9_iay5n"]
 [ext_resource type="Script" path="res://scripts/player/states/special.gd" id="10_r5pad"]
 [ext_resource type="Script" path="res://scripts/player/states/slide.gd" id="11_t5att"]
@@ -193,6 +194,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plyu4"]
 size = Vector2(10, 25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntrya"]
+size = Vector2(10, 12)
+
 [sub_resource type="Gradient" id="Gradient_2nuyk"]
 offsets = PackedFloat32Array(0, 0.625, 0.962838)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -219,9 +223,14 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="StandingShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_plyu4")
+
+[node name="CrouchShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_ntrya")
+debug_color = Color(0.901961, 0, 0.764706, 0.419608)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -262,8 +271,10 @@ run_state = NodePath("../Run")
 slam_state = NodePath("../Slam")
 attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
-extra_gravity = 300
+jump_force = -600
+extra_gravity = 1000
 animation_name = "jump"
+gravity = 1600
 
 [node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "jump_state", "slam_state", "attack_state", "special_state")]
 script = ExtResource("8_wsu6k")
@@ -275,6 +286,13 @@ attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
 extra_gravity = 400
 animation_name = "fall"
+
+[node name="Crouch" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "slide_state", "jump_state")]
+script = ExtResource("9_04wpj")
+idle_state = NodePath("../Idle")
+run_state = NodePath("../Run")
+slide_state = NodePath("../Slide")
+jump_state = NodePath("../Jump")
 
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("9_iay5n")

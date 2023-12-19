@@ -34,6 +34,7 @@ func process_physics(delta: float) -> State:
 		parent.velocity.x = speed
 	else:
 		parent.velocity.x = -speed
+	#! Verify if it is possible to get out of the slide state, if not, go to crouch state if speed is too low or do nothing if speed is still enough
 	# Jump
 	if Input.is_action_just_pressed("jump"):
 		parent.jump_buffer_timer.start()
