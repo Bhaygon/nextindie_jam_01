@@ -11,6 +11,7 @@ extends State
 @export var extra_gravity = 300
 
 func enter() -> void:
+    #print("fall")
     super()
 
 func process_physics(delta: float) -> State:

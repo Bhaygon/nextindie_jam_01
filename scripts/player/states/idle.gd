@@ -8,6 +8,7 @@ extends State
 @export var special_state: State
 
 func enter() -> void:
+	#print("idle")
 	super()
 	parent.velocity.x = 0
 

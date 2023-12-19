@@ -16,7 +16,10 @@ signal label_debug_text
 @export var idle_state: State
 @export var jump_state: State
 
+var tw: Tween
+
 func enter() -> void:
+	#print("slide")
 	label_debug_text.emit("slide")
 	# Can never change direction while sliding
 	dir_right = parent.velocity.x > 0
@@ -25,7 +28,7 @@ func enter() -> void:
 	super()
 
 func increase_speed():
-	var tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
+	tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
 	tw.tween_property(self, "speed", 0, 0.5)
 
 func process_physics(delta: float) -> State:
@@ -49,5 +52,6 @@ func process_physics(delta: float) -> State:
 	parent.move_and_slide()
 	# Return to when too slow
 	if abs(parent.velocity.x) < min_speed:
+		tw.stop()
 		return idle_state
 	return null

@@ -12,6 +12,7 @@ extends State
 @export var extra_gravity = 200
 
 func enter() -> void:
+    #print("jump")
     super()
     parent.velocity.y = jump_force
 

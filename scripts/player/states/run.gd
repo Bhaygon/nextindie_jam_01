@@ -9,12 +9,10 @@ extends State
 @export var special_state: State
 
 func enter() -> void:
+	#print("run")
 	super()
 
 func process_physics(delta: float) -> State:
-	#todo Slide
-	if Input.is_action_just_pressed("slide"):
-		return slide_state
 	#todo Attack
 	if Input.is_action_just_pressed("attack"):
 		return attack_state
@@ -44,6 +42,9 @@ func process_physics(delta: float) -> State:
 		return jump_state
 	parent.velocity.y += gravity * delta
 	parent.move_and_slide()
+	#todo Slide
+	if Input.is_action_just_pressed("slide"):
+		return slide_state
 	# Fall
 	if not parent.is_on_floor():
 		parent.coyote_timer.start() # Coyote timer only on the start of a fall

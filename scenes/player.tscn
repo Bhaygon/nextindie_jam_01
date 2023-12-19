@@ -271,10 +271,9 @@ run_state = NodePath("../Run")
 slam_state = NodePath("../Slam")
 attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
-jump_force = -600
+jump_force = -500
 extra_gravity = 1000
 animation_name = "jump"
-gravity = 1600
 
 [node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "jump_state", "slam_state", "attack_state", "special_state")]
 script = ExtResource("8_wsu6k")
@@ -284,7 +283,7 @@ jump_state = NodePath("../Jump")
 slam_state = NodePath("../Slam")
 attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
-extra_gravity = 400
+extra_gravity = 600
 animation_name = "fall"
 
 [node name="Crouch" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "slide_state", "jump_state")]
@@ -314,7 +313,6 @@ animation_name = "slide"
 script = ExtResource("12_54n8i")
 idle_state = NodePath("../Idle")
 animation_name = "slam"
-run_speed = 75.0
 
 [node name="JumpBufferTimer" type="Timer" parent="."]
 wait_time = 0.15
