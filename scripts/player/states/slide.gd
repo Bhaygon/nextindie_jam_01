@@ -37,7 +37,7 @@ func increase_speed():
 func leave_slide(new_state: State):
 	parent.crouch_shape.disabled = true
 	parent.standing_shape.disabled = false
-	label_debug_text.emit("leave crouch")
+	label_debug_text.emit("leave slide")
 	return new_state
 
 func can_leave_slide() -> bool:

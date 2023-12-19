@@ -296,6 +296,7 @@ run_state = NodePath("../Run")
 slide_state = NodePath("../Slide")
 jump_state = NodePath("../Jump")
 fall_state = NodePath("../Fall")
+animation_name = "slide"
 
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("9_iay5n")

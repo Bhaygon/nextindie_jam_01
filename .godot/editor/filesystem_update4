@@ -7,3 +7,6 @@ res://scripts/player/states/slide.gd
 res://scripts/player/states/slam.gd
 res://scripts/player/states/fall.gd
 res://scripts/player/states/jump.gd
+res://levels/base/level_base.tscn
+res://scenes/main_menu.tscn
+res://scenes/hud.tscn
