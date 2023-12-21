@@ -8,3 +8,8 @@ res://scripts/player/states/slide.gd
 res://scripts/player/states/special.gd
 res://scripts/player/states/state.gd
 res://scripts/player/states/attack.gd
+res://scenes/player.tscn
+res://scenes/main.tscn
+res://scenes/main_menu.tscn
+res://scenes/hud.tscn
+res://levels/base/level_base.tscn

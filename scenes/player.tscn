@@ -1,14 +1,21 @@
-[gd_scene load_steps=30 format=3 uid="uid://b4euajxnj6q8s"]
+[gd_scene load_steps=37 format=3 uid="uid://b4euajxnj6q8s"]
 
-[ext_resource type="Texture2D" uid="uid://takv2hu73yk3" path="res://assets/DarkSamurai (64x64).png" id="1_54bhe"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_cinr2"]
+[ext_resource type="Texture2D" uid="uid://ba2wrdfp3x88v" path="res://assets/test/krimpus_idle.png" id="2_qvx0j"]
 [ext_resource type="Script" path="res://scripts/player/state_machine.gd" id="3_1yaku"]
+[ext_resource type="Texture2D" uid="uid://b48wo3sun1giy" path="res://assets/test/krimpus_jump.png" id="3_wneys"]
+[ext_resource type="Texture2D" uid="uid://bx5v5kx01r3bs" path="res://assets/test/krimpus_walk_1.png" id="4_2xh08"]
 [ext_resource type="Script" path="res://scripts/player/states/state.gd" id="4_expbu"]
+[ext_resource type="Texture2D" uid="uid://2cbuv8ks7x5j" path="res://assets/test/krimpus_walk_2.png" id="5_b8eht"]
 [ext_resource type="Script" path="res://scripts/player/states/idle.gd" id="5_x3xf4"]
 [ext_resource type="Script" path="res://scripts/player/states/run.gd" id="6_3w4xs"]
+[ext_resource type="Texture2D" uid="uid://pwhvr7wm6ovt" path="res://assets/test/krimpus_walk_3.png" id="6_xqsf6"]
 [ext_resource type="Script" path="res://scripts/player/states/jump.gd" id="7_hdwc7"]
+[ext_resource type="Texture2D" uid="uid://drswrfi7e7rcs" path="res://assets/test/krimpus_walk_4.png" id="7_wleuo"]
+[ext_resource type="Texture2D" uid="uid://bept1gxun7ojb" path="res://assets/test/krimpus_slam.png" id="8_2dd6k"]
 [ext_resource type="Script" path="res://scripts/player/states/fall.gd" id="8_wsu6k"]
 [ext_resource type="Script" path="res://scenes/crouch.gd" id="9_04wpj"]
+[ext_resource type="Texture2D" uid="uid://cjjq40u36c36y" path="res://assets/test/krimpus_hit.png" id="9_fifs4"]
 [ext_resource type="Script" path="res://scripts/player/states/attack.gd" id="9_iay5n"]
 [ext_resource type="Script" path="res://scripts/player/states/special.gd" id="10_r5pad"]
 [ext_resource type="Script" path="res://scripts/player/states/slide.gd" id="11_t5att"]
@@ -20,10 +27,22 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_qvx0j")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -40,10 +59,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [28, 30]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_8tblc"]
@@ -52,14 +71,14 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [70, 73]
+"values": [ExtResource("8_2dd6k")]
 }
 
 [sub_resource type="Animation" id="Animation_bc7ux"]
@@ -69,14 +88,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0, 7]
+"values": [ExtResource("2_qvx0j")]
 }
 
 [sub_resource type="Animation" id="Animation_rspfs"]
@@ -85,14 +104,14 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [56, 59]
+"values": [ExtResource("3_wneys")]
 }
 
 [sub_resource type="Animation" id="Animation_iu47u"]
@@ -102,14 +121,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [14, 21]
+"values": [ExtResource("4_2xh08"), ExtResource("5_b8eht"), ExtResource("6_xqsf6"), ExtResource("7_wleuo")]
 }
 
 [sub_resource type="Animation" id="Animation_77dos"]
@@ -119,14 +138,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [22, 25]
+"values": [ExtResource("8_2dd6k")]
 }
 
 [sub_resource type="Animation" id="Animation_b67b2"]
@@ -136,14 +155,14 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [26, 27, 26]
+"values": [ExtResource("9_fifs4")]
 }
 
 [sub_resource type="Animation" id="Animation_e411n"]
@@ -156,10 +175,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [8, 13]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_at02d"]
@@ -171,10 +190,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [32, 41]
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vrc24"]
@@ -213,9 +232,9 @@ script = ExtResource("1_cinr2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 5
-texture = ExtResource("1_54bhe")
-hframes = 14
-vframes = 8
+position = Vector2(0, -3)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_qvx0j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -245,47 +264,40 @@ starting_state = NodePath("Idle")
 script = ExtResource("4_expbu")
 animation_name = "idle"
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "run_state", "attack_state", "special_state", "crouch_state")]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "run_state", "special_state", "crouch_state")]
 script = ExtResource("5_x3xf4")
 fall_state = NodePath("../Fall")
 jump_state = NodePath("../Jump")
 run_state = NodePath("../Run")
-attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
 crouch_state = NodePath("../Crouch")
 animation_name = "idle"
 
-[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "idle_state", "slide_state", "attack_state", "special_state", "crouch_state")]
+[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "idle_state", "slide_state", "crouch_state")]
 script = ExtResource("6_3w4xs")
 fall_state = NodePath("../Fall")
 jump_state = NodePath("../Jump")
 idle_state = NodePath("../Idle")
 slide_state = NodePath("../Slide")
-attack_state = NodePath("../Attack")
-special_state = NodePath("../Special")
 crouch_state = NodePath("../Crouch")
 animation_name = "run"
 
-[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "idle_state", "run_state", "slam_state", "attack_state", "special_state")]
+[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "idle_state", "run_state", "slam_state")]
 script = ExtResource("7_hdwc7")
 fall_state = NodePath("../Fall")
 idle_state = NodePath("../Idle")
 run_state = NodePath("../Run")
 slam_state = NodePath("../Slam")
-attack_state = NodePath("../Attack")
-special_state = NodePath("../Special")
 jump_force = -500
 extra_gravity = 1000
 animation_name = "jump"
 
-[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "jump_state", "slam_state", "attack_state", "special_state")]
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "jump_state", "slam_state")]
 script = ExtResource("8_wsu6k")
 idle_state = NodePath("../Idle")
 run_state = NodePath("../Run")
 jump_state = NodePath("../Jump")
 slam_state = NodePath("../Slam")
-attack_state = NodePath("../Attack")
-special_state = NodePath("../Special")
 extra_gravity = 600
 animation_name = "fall"
 

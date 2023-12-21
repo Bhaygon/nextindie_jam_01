@@ -9,8 +9,9 @@ Gradient.png::CompressedTexture2D::5591681977092622583::1702759012::1702759012::
 monochrome_tilemap_transparent_packed.png::CompressedTexture2D::2899340869076991271::1702759012::1702759012::1::::<><>::
 Rectangle2.png::CompressedTexture2D::8956842334827813151::1702759012::1702759012::1::::<><>::
 Rectangle.png::CompressedTexture2D::6652829845112896058::1702759012::1702759012::1::::<><>::
-::res://assets/test/::1703161507
+::res://assets/test/::1703162088
 krimpus_gameover.png::CompressedTexture2D::6480026537452777528::1703161507::1703161507::1::::<><>::
+krimpus_hit.png::CompressedTexture2D::5424144965116109222::1703162088::1703162088::1::::<><>::
 krimpus_idle.png::CompressedTexture2D::2443525181403925011::1703161507::1703161507::1::::<><>::
 krimpus_jump.png::CompressedTexture2D::4491383889422937056::1703161507::1703161507::1::::<><>::
 krimpus_slam.png::CompressedTexture2D::2699342129658174843::1703161507::1703161507::1::::<><>::
@@ -36,10 +37,10 @@ player.gd::GDScript::-1::1703003211::0::1::::Player<>CharacterBody2D<>::
 state_machine.gd::GDScript::-1::1702759012::0::1::::<>Node<>::
 ::res://scripts/player/states/::1703003211
 attack.gd::GDScript::-1::1702989211::0::1::::<>State<>::
-fall.gd::GDScript::-1::1703003211::0::1::::<>State<>::
-idle.gd::GDScript::-1::1703003211::0::1::::<>State<>::
-jump.gd::GDScript::-1::1703003211::0::1::::<>State<>::
-run.gd::GDScript::-1::1703003211::0::1::::<>State<>::
+fall.gd::GDScript::-1::1703161685::0::1::::<>State<>::
+idle.gd::GDScript::-1::1703161621::0::1::::<>State<>::
+jump.gd::GDScript::-1::1703161637::0::1::::<>State<>::
+run.gd::GDScript::-1::1703161650::0::1::::<>State<>::
 slam.gd::GDScript::-1::1703003211::0::1::::<>State<>::
 slide.gd::GDScript::-1::1703003211::0::1::::<>State<>::
 special.gd::GDScript::-1::1702989211::0::1::::<>State<>::
