@@ -16,3 +16,7 @@ mono_crash.*.json
 .godot/uid_cache.bin
 .godot/editor/filesystem_cache8
 .godot/editor/filesystem_update4
+.godot/uid_cache.bin
+.godot/editor/filesystem_cache8
+.godot/editor/project_metadata.cfg
+.godot/editor/editor_layout.cfg

@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1703161558
-export_presets.cfg::TextFile::-1::1702989211::0::1::::<><>::
+::res://::1703163027
+export_presets.cfg::TextFile::-1::1703162884::0::1::::<><>::
 icon.svg::CompressedTexture2D::2912458500451981851::1702750012::1702759012::1::::<><>::
 ::res://assets/::1703161507
 DarkSamurai (64x64).png::CompressedTexture2D::1334234130618967408::1702759012::1702759012::1::::<><>::
@@ -20,14 +20,14 @@ krimpus_walk_2.png::CompressedTexture2D::1899325121054450689::1703161507::170316
 krimpus_walk_3.png::CompressedTexture2D::1098712429128713357::1703161507::1703161507::1::::<><>::
 krimpus_walk_4.png::CompressedTexture2D::8390997601271917530::1703161507::1703161507::1::::<><>::
 ::res://levels/::1702759897
-::res://levels/base/::1703161506
-level_base.tscn::PackedScene::3947893447459536212::1703161506::0::1::::<><>::uid://bhkpyq6dyx000::::res://assets/monochrome_tilemap_transparent_packed.png
-::res://scenes/::1703161506
+::res://levels/base/::1703162472
+level_base.tscn::PackedScene::3947893447459536212::1703162472::0::1::::<><>::uid://bhkpyq6dyx000::::res://assets/monochrome_tilemap_transparent_packed.png
+::res://scenes/::1703162472
 crouch.gd::GDScript::-1::1703161506::0::1::::<>State<>::
-hud.tscn::PackedScene::8163742926446952233::1703161506::0::1::::<><>::uid://clwwgkdn137ep::::res://assets/Gradient.png<>uid://c11xeux8tt8xa::::res://assets/Rectangle.png<>uid://bsv0bmr4kvj6n::::res://assets/Gradient2.png<>uid://d0u05cwbb1etj::::res://assets/Rectangle2.png
-main.tscn::PackedScene::6887287154721550325::1703161506::0::1::::<><>::uid://doktwhf07affl::::res://scenes/hud.tscn<>uid://r4x7t5u6382f::::res://scenes/main_menu.tscn<>uid://bwinh05r0gl3q::::res://levels/base/level_base.tscn<>uid://b4euajxnj6q8s::::res://scenes/player.tscn
-main_menu.tscn::PackedScene::1254531978191929071::1703159502::0::1::::<><>::res://scripts/mainmenu/MainMenu.gd
-player.tscn::PackedScene::4431369508912187036::1703159502::0::1::::<><>::uid://takv2hu73yk3::::res://assets/DarkSamurai (64x64).png<>res://scripts/player/player.gd<>res://scripts/player/state_machine.gd<>res://scripts/player/states/state.gd<>res://scripts/player/states/idle.gd<>res://scripts/player/states/run.gd<>res://scripts/player/states/jump.gd<>res://scripts/player/states/fall.gd<>res://scenes/crouch.gd<>res://scripts/player/states/attack.gd<>res://scripts/player/states/special.gd<>res://scripts/player/states/slide.gd<>res://scripts/player/states/slam.gd<>res://scenes/state_label.gd
+hud.tscn::PackedScene::8163742926446952233::1703162472::0::1::::<><>::uid://clwwgkdn137ep::::res://assets/Gradient.png<>uid://c11xeux8tt8xa::::res://assets/Rectangle.png<>uid://bsv0bmr4kvj6n::::res://assets/Gradient2.png<>uid://d0u05cwbb1etj::::res://assets/Rectangle2.png
+main.tscn::PackedScene::6887287154721550325::1703162472::0::1::::<><>::uid://doktwhf07affl::::res://scenes/hud.tscn<>uid://r4x7t5u6382f::::res://scenes/main_menu.tscn<>uid://bwinh05r0gl3q::::res://levels/base/level_base.tscn<>uid://b4euajxnj6q8s::::res://scenes/player.tscn
+main_menu.tscn::PackedScene::1254531978191929071::1703162472::0::1::::<><>::res://scripts/mainmenu/MainMenu.gd
+player.tscn::PackedScene::4431369508912187036::1703162472::0::1::::<><>::res://scripts/player/player.gd<>uid://ba2wrdfp3x88v::::res://assets/test/krimpus_idle.png<>res://scripts/player/state_machine.gd<>uid://b48wo3sun1giy::::res://assets/test/krimpus_jump.png<>uid://bx5v5kx01r3bs::::res://assets/test/krimpus_walk_1.png<>res://scripts/player/states/state.gd<>uid://2cbuv8ks7x5j::::res://assets/test/krimpus_walk_2.png<>res://scripts/player/states/idle.gd<>res://scripts/player/states/run.gd<>uid://pwhvr7wm6ovt::::res://assets/test/krimpus_walk_3.png<>res://scripts/player/states/jump.gd<>uid://drswrfi7e7rcs::::res://assets/test/krimpus_walk_4.png<>uid://bept1gxun7ojb::::res://assets/test/krimpus_slam.png<>res://scripts/player/states/fall.gd<>res://scenes/crouch.gd<>uid://cjjq40u36c36y::::res://assets/test/krimpus_hit.png<>res://scripts/player/states/attack.gd<>res://scripts/player/states/special.gd<>res://scripts/player/states/slide.gd<>res://scripts/player/states/slam.gd<>res://scenes/state_label.gd
 state_label.gd::GDScript::-1::1702856129::0::1::::<>Label<>::
 ::res://scripts/::1703161506
 ::res://scripts/mainmenu/::1703161506
