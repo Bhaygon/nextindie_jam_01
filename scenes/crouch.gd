@@ -65,7 +65,7 @@ func process_physics(delta: float) -> State:
     parent.velocity.y += gravity * delta
     parent.move_and_slide()
     # Slide
-    if Input.is_action_just_pressed("slide"):
+    if Input.is_action_just_pressed("slide") and (right or left):
         return leave_crouch(slide_state)
     # Fall
     if not parent.is_on_floor() and can_leave_crouch():
