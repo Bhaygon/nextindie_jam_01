@@ -12,6 +12,7 @@ signal label_debug_text
 @export var idle_state: State
 
 func enter() -> void:
+	#print("attack")
 	parent.velocity.x = 0
 	parent.velocity.y = 0
 	label_debug_text.emit("attack")

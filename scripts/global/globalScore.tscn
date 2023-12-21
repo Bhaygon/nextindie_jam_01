@@ -42,6 +42,7 @@ func Reset_Timer() -> void:
 
 
 func Start_Timer() -> void:
+	globalMusic.Start_Music(globalMusic.dnodeMusic.nodeMusicChaos)
 	bChaoTimerEnabled = true
 
 
@@ -50,7 +51,7 @@ func Start_Timer() -> void:
 
 func McGuffin_Destroyed(nodeMcGuffin) -> void:
 	# START TIMER IF THIS IS THE FIRST ONE
-	if ! bChaoTimerEnabled: bChaoTimerEnabled = true
+	if ! bChaoTimerEnabled: Start_Timer()
 	
 	anodeRemainingMcGuffins.erase(nodeMcGuffin)
 	# CHECK IF ARRAY IS EMPTY IF SO DISPLAY WIN SCREEN

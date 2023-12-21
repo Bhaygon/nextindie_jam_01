@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4euajxnj6q8s"]
+[gd_scene load_steps=30 format=3 uid="uid://b4euajxnj6q8s"]
 
 [ext_resource type="Texture2D" uid="uid://takv2hu73yk3" path="res://assets/DarkSamurai (64x64).png" id="1_54bhe"]
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_cinr2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/player/states/run.gd" id="6_3w4xs"]
 [ext_resource type="Script" path="res://scripts/player/states/jump.gd" id="7_hdwc7"]
 [ext_resource type="Script" path="res://scripts/player/states/fall.gd" id="8_wsu6k"]
+[ext_resource type="Script" path="res://scenes/crouch.gd" id="9_04wpj"]
 [ext_resource type="Script" path="res://scripts/player/states/attack.gd" id="9_iay5n"]
 [ext_resource type="Script" path="res://scripts/player/states/special.gd" id="10_r5pad"]
 [ext_resource type="Script" path="res://scripts/player/states/slide.gd" id="11_t5att"]
@@ -193,6 +194,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plyu4"]
 size = Vector2(10, 25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntrya"]
+size = Vector2(10, 12)
+
 [sub_resource type="Gradient" id="Gradient_2nuyk"]
 offsets = PackedFloat32Array(0, 0.625, 0.962838)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -219,9 +223,15 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="StandingShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_plyu4")
+
+[node name="CrouchShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_ntrya")
+disabled = true
+debug_color = Color(0.901961, 0, 0.764706, 0.419608)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -235,16 +245,17 @@ starting_state = NodePath("Idle")
 script = ExtResource("4_expbu")
 animation_name = "idle"
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "run_state", "attack_state", "special_state")]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "run_state", "attack_state", "special_state", "crouch_state")]
 script = ExtResource("5_x3xf4")
 fall_state = NodePath("../Fall")
 jump_state = NodePath("../Jump")
 run_state = NodePath("../Run")
 attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
+crouch_state = NodePath("../Crouch")
 animation_name = "idle"
 
-[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "idle_state", "slide_state", "attack_state", "special_state")]
+[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "jump_state", "idle_state", "slide_state", "attack_state", "special_state", "crouch_state")]
 script = ExtResource("6_3w4xs")
 fall_state = NodePath("../Fall")
 jump_state = NodePath("../Jump")
@@ -252,6 +263,7 @@ idle_state = NodePath("../Idle")
 slide_state = NodePath("../Slide")
 attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
+crouch_state = NodePath("../Crouch")
 animation_name = "run"
 
 [node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("fall_state", "idle_state", "run_state", "slam_state", "attack_state", "special_state")]
@@ -262,7 +274,8 @@ run_state = NodePath("../Run")
 slam_state = NodePath("../Slam")
 attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
-extra_gravity = 300
+jump_force = -500
+extra_gravity = 1000
 animation_name = "jump"
 
 [node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "jump_state", "slam_state", "attack_state", "special_state")]
@@ -273,8 +286,17 @@ jump_state = NodePath("../Jump")
 slam_state = NodePath("../Slam")
 attack_state = NodePath("../Attack")
 special_state = NodePath("../Special")
-extra_gravity = 400
+extra_gravity = 600
 animation_name = "fall"
+
+[node name="Crouch" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "slide_state", "jump_state", "fall_state")]
+script = ExtResource("9_04wpj")
+idle_state = NodePath("../Idle")
+run_state = NodePath("../Run")
+slide_state = NodePath("../Slide")
+jump_state = NodePath("../Jump")
+fall_state = NodePath("../Fall")
+animation_name = "slide"
 
 [node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("9_iay5n")
@@ -286,17 +308,17 @@ script = ExtResource("10_r5pad")
 idle_state = NodePath("../Idle")
 animation_name = "special"
 
-[node name="Slide" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "jump_state")]
+[node name="Slide" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "jump_state", "crouch_state")]
 script = ExtResource("11_t5att")
 idle_state = NodePath("../Idle")
 jump_state = NodePath("../Jump")
+crouch_state = NodePath("../Crouch")
 animation_name = "slide"
 
 [node name="Slam" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("12_54n8i")
 idle_state = NodePath("../Idle")
 animation_name = "slam"
-run_speed = 75.0
 
 [node name="JumpBufferTimer" type="Timer" parent="."]
 wait_time = 0.15
@@ -329,6 +351,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("13_mfumy")
 
+[node name="DownDistanceRaycast" type="RayCast2D" parent="."]
+position = Vector2(0, 16)
+target_position = Vector2(0, 100)
+
+[node name="DownRaycast" type="RayCast2D" parent="."]
+position = Vector2(0, 16)
+target_position = Vector2(0, 2)
+
+[node name="CrouchRaycast1" type="RayCast2D" parent="."]
+position = Vector2(-5, 4)
+target_position = Vector2(0, -14)
+
+[node name="CrouchRaycast2" type="RayCast2D" parent="."]
+position = Vector2(0, 4)
+target_position = Vector2(0, -14)
+
+[node name="CrouchRaycast3" type="RayCast2D" parent="."]
+position = Vector2(5, 4)
+target_position = Vector2(0, -14)
+
+[connection signal="label_debug_text" from="StateMachine/Crouch" to="StateLabel" method="change_label"]
 [connection signal="label_debug_text" from="StateMachine/Attack" to="StateLabel" method="change_label"]
 [connection signal="label_debug_text" from="StateMachine/Special" to="StateLabel" method="change_label"]
 [connection signal="label_debug_text" from="StateMachine/Slide" to="StateLabel" method="change_label"]

@@ -1,13 +1,22 @@
 extends CanvasLayer
 
 # Variables =======================================================================================
+const plLevelTest:= preload("res://levels/base/level_base.tscn")
+const plPlayer:= preload("res://scenes/player.tscn")
+
 @onready var anodeParentChildren: Array = self.get_parent().get_children() # Contains references to the children of Main.
+
+@onready var nodeMain:= self.get_parent()
+
+var nodeLevel = weakref(null)
+var nodePlayer = weakref(null)
 
 
 
 # General =========================================================================================
 
 func _ready() -> void:
+	globalMusic.Start_Music(globalMusic.dnodeMusic.nodeMusicMenu)
 	Show_Menu()
 
 
@@ -17,19 +26,34 @@ func _ready() -> void:
 func Show_Menu() -> void:
 	for node in anodeParentChildren:
 		if node == self: node.show()
-		else: node.hide()
+		elif node.has_method("hide"): node.hide()
 
 
 func Hide_Menu() -> void:
 	for node in anodeParentChildren:
 		if node == self: node.hide()
-		else: node.show()
+		elif node.has_method("hide"): node.show()
 
 
 
 # Signals =========================================================================================
 
 func _on_button_play_pressed():
+	# RESETTING TIMER / MUSIC
+	globalScore.Reset_Timer()
+	globalMusic.Start_Music(globalMusic.dnodeMusic.nodeMusicStealth)
+	
+	# LOAD LEVEL
+	if nodeLevel.get_ref(): nodeLevel.get_ref().queue_free()
+	nodeLevel = weakref(plLevelTest.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE) )
+	nodeMain.add_child(nodeLevel.get_ref() )
+	
+	# LOAD PLAYER
+	if nodePlayer.get_ref(): nodePlayer.get_ref().queue_free()
+	nodePlayer = weakref(plPlayer.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE) )
+	nodeMain.add_child(nodePlayer.get_ref() )
+	
+	# HIDE MENU
 	Hide_Menu()
 
 

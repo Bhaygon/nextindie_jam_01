@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://3wnsckwyuvgt"]
+
+[ext_resource type="AudioStream" uid="uid://1envohajvh6d" path="res://assets/ost/Chaos.ogg" id="1_bk6oj"]
+[ext_resource type="AudioStream" uid="uid://q56hm5niwnha" path="res://assets/ost/MenuTheme.ogg" id="2_xl0gk"]
+[ext_resource type="AudioStream" uid="uid://kbc5lmiecaxi" path="res://assets/ost/Stealthy.ogg" id="3_3vf6l"]
+
+[sub_resource type="GDScript" id="GDScript_2lyo5"]
+script/source = "extends Node
+
+# Variables =======================================================================================
+@onready var dnodeMusic = {
+	\"nodeMusicChaos\" : $MusicChaos,
+	\"nodeMusicMenu\" : $MusicMenu,
+	\"nodeMusicStealth\" : $MusicStealth,
+}
+
+
+
+# Music ===========================================================================================
+
+func Start_Music(nodeMusic):
+	for s in dnodeMusic:
+		dnodeMusic[s].stop()
+	nodeMusic.play()
+"
+
+[node name="globalMusic" type="Node"]
+script = SubResource("GDScript_2lyo5")
+
+[node name="MusicChaos" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_bk6oj")
+
+[node name="MusicMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_xl0gk")
+
+[node name="MusicStealth" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3vf6l")

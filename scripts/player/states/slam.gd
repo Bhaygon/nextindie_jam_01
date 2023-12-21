@@ -11,10 +11,12 @@ signal label_debug_text
 
 @export var idle_state: State
 @export var slam_force: int = 8000
-@export var slam_gravity: int
+var slam_gravity: int
 
 var landing: bool
 var landed: bool
+
+var tw: Tween
 
 func enter() -> void:
 	label_debug_text.emit("slam")
@@ -26,14 +28,19 @@ func enter() -> void:
 
 func increase_speed():
 	slam_gravity = 0
-	var tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUINT)
+	tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUINT)
 	tw.tween_property(self, "slam_gravity", gravity + slam_force, 0.1)
 
 func land():
 	landing = true
+	slam()
 	parent.animation_player.play("slam_end")
 	await parent.animation_player.animation_finished
 	landed = true
+
+func slam():
+	if parent.down_raycast.is_colliding():
+		print("SLAM RAYCAST COLLISION")
 
 func process_physics(delta: float) -> State:
 	# Move
@@ -53,5 +60,6 @@ func process_physics(delta: float) -> State:
 	if (parent.is_on_floor() and not landing):
 		land()
 	if landed:
+		tw.stop()
 		return idle_state
 	return null

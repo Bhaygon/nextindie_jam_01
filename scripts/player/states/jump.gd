@@ -12,12 +12,13 @@ extends State
 @export var extra_gravity = 200
 
 func enter() -> void:
+    #print("jump")
     super()
     parent.velocity.y = jump_force
 
 func process_physics(delta: float) -> State:
     #todo Slam
-    if Input.is_action_just_pressed("slam"): #todo Also see distance from ground before using slam
+    if Input.is_action_just_pressed("slam") and not parent.down_distance_raycast.is_colliding():
         return slam_state
     #todo Attack
     if Input.is_action_just_pressed("attack"):
