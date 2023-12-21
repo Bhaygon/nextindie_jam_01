@@ -5,8 +5,8 @@ extends State
 @export var idle_state: State
 
 @export var slide_state: State
-@export var attack_state: State
-@export var special_state: State
+#@export var attack_state: State
+#@export var special_state: State
 @export var crouch_state: State
 
 func enter() -> void:
@@ -15,11 +15,11 @@ func enter() -> void:
 
 func process_physics(delta: float) -> State:
 	#todo Attack
-	if Input.is_action_just_pressed("attack"):
-		return attack_state
+	#if Input.is_action_just_pressed("attack"):
+	#	return attack_state
 	#todo Special
-	if Input.is_action_just_pressed("special"):
-		return special_state
+	#if Input.is_action_just_pressed("special"):
+	#	return special_state
 	#todo Crouch
 	if Input.is_action_just_pressed("crouch"):
 		return crouch_state

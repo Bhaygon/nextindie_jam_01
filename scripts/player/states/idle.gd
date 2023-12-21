@@ -4,7 +4,7 @@ extends State
 @export var jump_state: State
 @export var run_state: State
 
-@export var attack_state: State
+#@export var attack_state: State
 @export var special_state: State
 @export var crouch_state: State
 
@@ -18,8 +18,8 @@ func process_physics(delta: float) -> State:
 	if Input.is_action_just_pressed("crouch"):
 		return crouch_state
 	#todo Attack
-	if Input.is_action_just_pressed("attack"):
-		return attack_state
+	#if Input.is_action_just_pressed("attack"):
+	#	return attack_state
 	#todo Special
 	if Input.is_action_just_pressed("special"):
 		return special_state
