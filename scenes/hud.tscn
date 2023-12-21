@@ -1,11 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://doktwhf07affl"]
+[gd_scene load_steps=6 format=3 uid="uid://doktwhf07affl"]
 
 [ext_resource type="Texture2D" uid="uid://clwwgkdn137ep" path="res://assets/Gradient.png" id="1_6a2ur"]
+[ext_resource type="Script" path="res://scripts/hud/Score.gd" id="1_ee7ll"]
 [ext_resource type="Texture2D" uid="uid://c11xeux8tt8xa" path="res://assets/Rectangle.png" id="2_24sx1"]
 [ext_resource type="Texture2D" uid="uid://bsv0bmr4kvj6n" path="res://assets/Gradient2.png" id="2_py133"]
 [ext_resource type="Texture2D" uid="uid://d0u05cwbb1etj" path="res://assets/Rectangle2.png" id="4_1qfec"]
 
 [node name="HUD" type="CanvasLayer"]
+
+[node name="Score" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ee7ll")
+
+[node name="ChaosTimer" type="Label" parent="Score"]
+layout_mode = 2
+text = "Chaos Timer: 0.000"
+
+[node name="McGuffinCounter" type="Label" parent="Score"]
+layout_mode = 2
+text = "Destroyed: X / Y"
+
+[node name="Label" type="Label" parent="Score"]
+layout_mode = 2
+text = "Press \"L\" to test the McGuffins"
 
 [node name="R_MobileButtons" type="HBoxContainer" parent="."]
 visible = false
