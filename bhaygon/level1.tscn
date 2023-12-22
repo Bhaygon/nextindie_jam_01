@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyr43q3yrqyoj"]
+
+[ext_resource type="Texture2D" uid="uid://dv486qtqrgkkg" path="res://assets/bhaygon/houses/lvl_1.png" id="1_7ttmk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjtir"]
+size = Vector2(1292, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqm6a"]
+size = Vector2(77, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fd2t"]
+size = Vector2(57, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lv6np"]
+size = Vector2(19, 19)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -141)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_7ttmk")
+
+[node name="LevelCollision" type="StaticBody2D" parent="."]
+position = Vector2(0, 110)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelCollision"]
+shape = SubResource("RectangleShape2D_mjtir")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelCollision"]
+position = Vector2(249.5, -58)
+shape = SubResource("RectangleShape2D_oqm6a")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelCollision"]
+position = Vector2(393.5, -96.5)
+shape = SubResource("RectangleShape2D_7fd2t")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelCollision"]
+position = Vector2(-124.5, -38.5)
+shape = SubResource("RectangleShape2D_lv6np")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="LevelCollision"]
+position = Vector2(-278, -38.5)
+shape = SubResource("RectangleShape2D_lv6np")

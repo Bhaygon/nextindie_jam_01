@@ -5,8 +5,8 @@ extends State
 @export var run_state: State
 
 @export var slam_state: State
-@export var attack_state: State
-@export var special_state: State
+#@export var attack_state: State
+#@export var special_state: State
 
 @export var jump_force: int = -300
 @export var extra_gravity = 200
@@ -21,11 +21,11 @@ func process_physics(delta: float) -> State:
     if Input.is_action_just_pressed("slam") and not parent.down_distance_raycast.is_colliding():
         return slam_state
     #todo Attack
-    if Input.is_action_just_pressed("attack"):
-        return attack_state
+    #if Input.is_action_just_pressed("attack"):
+    #    return attack_state
     #todo Special
-    if Input.is_action_just_pressed("special"):
-        return special_state
+    #if Input.is_action_just_pressed("special"):
+    #    return special_state
     # Move
     var right = Input.is_action_pressed("right")
     var left = Input.is_action_pressed("left")

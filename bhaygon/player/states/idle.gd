@@ -2,38 +2,30 @@ extends State
 
 @export var fall_state: State
 @export var jump_state: State
-@export var idle_state: State
+@export var run_state: State
 
-@export var slide_state: State
-@export var attack_state: State
+#@export var attack_state: State
 @export var special_state: State
 @export var crouch_state: State
 
 func enter() -> void:
-	#print("run")
+	#print("idle")
 	super()
+	parent.velocity.x = 0
 
 func process_physics(delta: float) -> State:
-	#todo Attack
-	if Input.is_action_just_pressed("attack"):
-		return attack_state
-	#todo Special
-	if Input.is_action_just_pressed("special"):
-		return special_state
 	#todo Crouch
 	if Input.is_action_just_pressed("crouch"):
 		return crouch_state
+	#todo Attack
+	#if Input.is_action_just_pressed("attack"):
+	#	return attack_state
+	#todo Special
+	if Input.is_action_just_pressed("special"):
+		return special_state
 	# Move
-	var right = Input.is_action_pressed("right")
-	var left = Input.is_action_pressed("left")
-	if right: 
-		parent.velocity.x = run_speed
-		parent.sprite.flip_h = false
-	if left:
-		parent.velocity.x = -run_speed
-		parent.sprite.flip_h = true
-	if not right and not left:
-		return idle_state;
+	if Input.is_action_pressed('left') or Input.is_action_pressed('right'):
+		return run_state
 	# Jump
 	if Input.is_action_just_pressed("jump"):
 		parent.jump_buffer_timer.start()
@@ -46,11 +38,7 @@ func process_physics(delta: float) -> State:
 		return jump_state
 	parent.velocity.y += gravity * delta
 	parent.move_and_slide()
-	#todo Slide
-	if Input.is_action_just_pressed("slide"):
-		return slide_state
 	# Fall
 	if not parent.is_on_floor():
-		parent.coyote_timer.start() # Coyote timer only on the start of a fall
 		return fall_state
 	return null

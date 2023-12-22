@@ -73,10 +73,10 @@ func process_physics(delta: float) -> State:
 	parent.velocity.y += gravity * delta
 	parent.move_and_slide()
 	# Return to when too slow
-	if abs(parent.velocity.x) < min_speed and can_leave_slide():
+	if abs(parent.velocity.x) < min_speed:
 		tw.stop()
 		if can_leave_slide():
 			return leave_slide(idle_state)
 		else:
-			leave_slide(crouch_state) # Continue in crouch
+			return leave_slide(crouch_state) # Continue in crouch
 	return null

@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 # Variables =======================================================================================
-const plLevelTest:= preload("res://levels/base/level_base.tscn")
-const plPlayer:= preload("res://scenes/player.tscn")
+const plLevelTest:= preload("res://bhaygon/level1.tscn")
+const plPlayer:= preload("res://bhaygon/player2.tscn")
 
 @onready var anodeParentChildren: Array = self.get_parent().get_children() # Contains references to the children of Main.
 
