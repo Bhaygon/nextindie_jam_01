@@ -39,8 +39,7 @@ func land():
 	landed = true
 
 func slam():
-	if parent.down_raycast.is_colliding():
-		print("SLAM RAYCAST COLLISION")
+	pass
 
 func process_physics(delta: float) -> State:
 	# Move
