@@ -1,9 +1,7 @@
 res://scenes/main.tscn
-res://scenes/player.tscn
 res://scenes/main_menu.tscn
 res://scenes/hud.tscn
 res://levels/base/level_base.tscn
 res://scenes/mcguffin.tscn
-res://scripts/mainmenu/MainMenu.gd
 res://bhaygon/player2.tscn
-res://bhaygon/player/states/attack.gd
+res://bhaygon/level1.tscn
