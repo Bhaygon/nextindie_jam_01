@@ -10,11 +10,12 @@ extends CharacterBody2D
 @onready var crouch_shape = $CrouchShape
 @onready var standing_shape = $StandingShape
 
-# Raycasts
+# Raycasts / Areas
+@onready var slam_area = $SlamArea
+
 @onready var crouch_raycast1 = $CrouchRaycast1
 @onready var crouch_raycast2 = $CrouchRaycast2
 @onready var crouch_raycast3 = $CrouchRaycast3
-@onready var down_raycast = $DownRaycast
 @onready var down_distance_raycast = $DownDistanceRaycast
 
 func _ready() -> void:

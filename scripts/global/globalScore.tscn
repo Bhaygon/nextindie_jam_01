@@ -9,7 +9,7 @@ script/source = "extends Node
 # Variables =======================================================================================
 var anodeRemainingMcGuffins: Array = []
 
-var bChaoTimerEnabled: bool = false
+var bChaosTimerEnabled: bool = false
 
 var fChaosTimer: float = 0.000
 
@@ -20,12 +20,7 @@ var nTotalMcGuffins: int = 0
 # General =========================================================================================
 
 func _process(fDelta) -> void:
-	if bChaoTimerEnabled: Add_Time_To_Chaos_Timer(fDelta)
-	
-	# TEST DESTROY MCGUFFINS // DELETE ME BEFORE FINAL VERSION
-	if Input.is_action_just_pressed(\"testdestroymcguffin\") && ! anodeRemainingMcGuffins.is_empty(): 
-		anodeRemainingMcGuffins[anodeRemainingMcGuffins.size() - 1].Destroy()
-	# DELETE ME
+	if bChaosTimerEnabled: Add_Time_To_Chaos_Timer(fDelta)
 
 
 
@@ -37,13 +32,13 @@ func Add_Time_To_Chaos_Timer(fDelta) -> void:
 
 
 func Reset_Timer() -> void:
-	bChaoTimerEnabled = false
+	bChaosTimerEnabled = false
 	fChaosTimer = 0.000
 
 
 func Start_Timer() -> void:
 	globalMusic.Start_Music(globalMusic.dnodeMusic.nodeMusicChaos)
-	bChaoTimerEnabled = true
+	bChaosTimerEnabled = true
 
 
 
@@ -51,7 +46,7 @@ func Start_Timer() -> void:
 
 func McGuffin_Destroyed(nodeMcGuffin) -> void:
 	# START TIMER IF THIS IS THE FIRST ONE
-	if ! bChaoTimerEnabled: Start_Timer()
+	if ! bChaosTimerEnabled: Start_Timer()
 	
 	anodeRemainingMcGuffins.erase(nodeMcGuffin)
 	# CHECK IF ARRAY IS EMPTY IF SO DISPLAY WIN SCREEN
